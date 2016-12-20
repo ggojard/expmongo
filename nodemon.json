@@ -1,0 +1,3 @@
+{
+  "ignore" : ["gram.js", "grammar.jison"]
+}
