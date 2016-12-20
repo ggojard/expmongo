@@ -13,8 +13,8 @@ var db
 MongoClient.connect('mongodb://expmongo-admin:ognompxe@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
   if (err) return console.log(err)
   db = database
-  app.listen(80, () => {
-    console.log('listening on 80')
+  app.listen(3000, () => {
+    console.log('listening on 3000')
   })
 })
 
