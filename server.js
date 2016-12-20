@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 var db
 
-MongoClient.connect('mongodb://expmongo-admin:ognompxe@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
+MongoClient.connect('mongodb://'+process.env.mongodb-user+':'+process.env.mongodb-password+'@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
   if (err) return console.log(err)
   db = database
   app.listen(3000, () => {
