@@ -10,12 +10,12 @@ app.set('view engine', 'ejs')
 
 var db
 
-console.log('INFO:' + 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@ds141328.mlab.com:41328/expmongo-quotes')
+console.log('INFO: ' + 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@ds141328.mlab.com:41328/expmongo-quotes')
 MongoClient.connect('mongodb://'+process.env.MONGODB_USER+':'+process.env.MONGODB_PASSWORD+'@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
-  if (err) return console.log(err)
+  if (err) return console.log('ERROR: '+err)
   db = database
   app.listen(process.env.PORT || 3000, () => {
-    console.log('INFO:Listening on ' + process.env.PORT)
+    console.log('INFO: Listening on ' + process.env.PORT)
   })
 })
 
@@ -35,15 +35,13 @@ app.get('/', (req, res) => {
 
 
 app.post('/quotes', (req, res) => {
-  // console.log('Hellooooooooooooooooo!')
-  // console.log(req.body)
+  // console.log('INFO:'+req.body)
 
   db.collection('quotes').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
-    console.log('saved to database')
+    console.log('INFO: Saved to database')
     res.redirect('/')
   })
-
 })
 
