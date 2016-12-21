@@ -3,7 +3,6 @@ var update = document.getElementById('update');
 
 update.addEventListener('click', function () {
   // Send PUT Request here
-
   fetch('quotes', {
   method: 'put',
   headers: {'Content-Type': 'application/json'},
@@ -19,6 +18,13 @@ update.addEventListener('click', function () {
   	console.log(data)
   	window.location.reload(true)
   })
+})
 
 
+var quote_text = document.getElementById('text');
+var quote_timestamp = document.getElementById('timestamp');
+var now = Date();
+
+update.addEventListener('change', function () {
+	quote_timestamp.value = now;
 })
