@@ -6,6 +6,7 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 
 app.use(bodyParser.urlencoded({extended: true}))
+app.set('view engine', 'ejs')
 
 var db
 
@@ -20,10 +21,18 @@ MongoClient.connect('mongodb://expmongo-admin:ognompxe@ds141328.mlab.com:41328/e
 
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html')
+  // res.sendFile(__dirname + '/index.html')
+
   // Note: __dirname is directory that contains the JavaScript source code. Try logging it and see what you get!
   // Mine was '/Users/zellwk/Projects/demo-repos/crud-express-mongo' for this app.
+
+  db.collection('quotes').find().toArray((err, result) => {
+    if (err) return console.log(err)
+    // renders index.ejs
+    res.render('index.ejs', {quotes: result})
+  })
 })
+
 
 app.post('/quotes', (req, res) => {
   // console.log('Hellooooooooooooooooo!')
@@ -37,3 +46,4 @@ app.post('/quotes', (req, res) => {
   })
 
 })
+
