@@ -21,8 +21,7 @@
       <button id="edit"><i class="fa fa-pencil-square-o"></i></button>
       <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
       <span class="quote_name"><%= quotes[i].name %></span>
-      <span class="quote_text"><%= quotes[i].quote %></span>
-      
+      <span class="quote_text"><%= quotes[i].quote %></span>      
     </li>
   <% } %>
   </ul>
@@ -30,7 +29,7 @@
   <form action="/quotes" method="POST">
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="quote" name="quote" id="quote">
-    <input type="date" name="timestamp" disabled="true" id="timestamp">
+    <input type="date" name="timestamp" id="timestamp">
     <button type="submit">Submit</button>
   </form>
 

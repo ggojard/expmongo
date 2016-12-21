@@ -25,6 +25,6 @@ var quote_text = document.getElementById('text');
 var quote_timestamp = document.getElementById('timestamp');
 var now = Date();
 
-update.addEventListener('change', function () {
+quote_text.addEventListener('click', function () {
 	quote_timestamp.value = now;
 })
