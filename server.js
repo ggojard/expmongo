@@ -7,6 +7,7 @@ const MongoClient = require('mongodb').MongoClient
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 // to make those folder accessible to the public
 app.use(express.static('public'))
@@ -14,7 +15,6 @@ app.use(express.static('css'))
 
 
 var db
-
 console.log('INFO: ' + 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@ds141328.mlab.com:41328/expmongo-quotes')
 MongoClient.connect('mongodb://'+process.env.MONGODB_USER+':'+process.env.MONGODB_PASSWORD+'@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
   if (err) return console.log('ERROR: '+err)
@@ -27,7 +27,6 @@ MongoClient.connect('mongodb://'+process.env.MONGODB_USER+':'+process.env.MONGOD
 
 app.get('/', (req, res) => {
   // res.sendFile(__dirname + '/index.html')
-
   // Note: __dirname is directory that contains the JavaScript source code. Try logging it and see what you get!
   // Mine was '/Users/zellwk/Projects/demo-repos/crud-express-mongo' for this app.
 
@@ -41,7 +40,6 @@ app.get('/', (req, res) => {
 
 app.post('/quotes', (req, res) => {
   // console.log('INFO:'+req.body)
-
   db.collection('quotes').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
@@ -50,3 +48,19 @@ app.post('/quotes', (req, res) => {
   })
 })
 
+
+app.put('/quotes', (req, res) => {
+  db.collection('quotes')
+  .findOneAndUpdate({name: 'Yoda'}, {
+    $set: {
+      name: req.body.name,
+      quote: req.body.quote
+    }
+  }, {
+    sort: {_id: -1},
+    upsert: true
+  }, (err, result) => {
+    if (err) return res.send(err)
+    res.send(result)
+  })
+})
