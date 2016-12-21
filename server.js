@@ -10,8 +10,8 @@ app.set('view engine', 'ejs')
 
 var db
 
-// MongoClient.connect('mongodb://'+process.env.MONGODB_USER+':'+process.env.MONGODB_PASSWORD+'@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
-MongoClient.connect('mongodb://expmongo-admin:ognompxe@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
+MongoClient.connect('mongodb://'+process.env.MONGODB_USER+':'+process.env.MONGODB_PASSWORD+'@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
+// MongoClient.connect('mongodb://expmongo-admin:ognompxe@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
   if (err) return console.log(err)
   db = database
   app.listen(process.env.PORT || 3000, () => {
