@@ -10,9 +10,9 @@ var dateISO = date.toISOString();
 
 $(document).ready(function(){
     $("i.edit").click(function(){
-        $("#name").attr("value") = $(this).next().text();
-        $("#quote").attr("value") = $(this).next().next().text();
-        console.log("quote: " + $(this).attr("id") + " " + $(this).next().c);
+        $("input#name").attr("value") = $(this).next().text();
+        $("input#quote").attr("value") = $(this).next().next().text();
+        console.log("quote: " + $(this).attr("id") + " " + $(this).next().text() );
     });
 
     $("i.hide").click(function(){        
