@@ -8,6 +8,8 @@ var dateISO = date.toISOString();
 // var monthIndex = date.getMonth();
 // var year = date.getFullYear();
 
+
+
 update.addEventListener('click', function () {
   // Send PUT Request here
   fetch('quotes', {

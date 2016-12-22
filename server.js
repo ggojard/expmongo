@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 
 // to make those folder accessible to the public
 app.use(express.static('public'))
-app.use(express.static('css'))
+// app.use(express.static('css'))
 
 // for connecting to the mongoDB
 var db

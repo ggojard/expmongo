@@ -6,7 +6,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
-  <link rel="stylesheet" type="text/css" href="expmongo.css">
+  <link rel="stylesheet" type="text/css" href="css/expmongo.css">
 </head>
 
 <body>  
@@ -25,11 +25,11 @@
     <li class="quote">
       <!-- <button id="edit">Edit</button> -->
       <!-- <button id="edit"><i class="fa fa-pencil-square-o"></i></button> -->
-      <i class="fa fa-pencil-square-o" id="quote_<%= i%>"></i>
+      <i class="fa fa-pencil-square-o" id="<%= quotes[i]._id%>"></i>
       <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
       <span class="quote_name"><%= quotes[i].name %></span>
       <span class="quote_text"><%= quotes[i].quote %></span>
-      <span class="quote_text"><%= quotes[i]._id %></span>
+      <!-- <span class="quote_text"><%= quotes[i]._id %></span> -->
     </li>
   <% } %>
   </ul>
@@ -41,5 +41,5 @@
 
 </body>
  
-<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
