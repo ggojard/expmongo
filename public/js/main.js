@@ -27,7 +27,7 @@ $(document).ready(function(){
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          '_id': $(this).attr("value"),
+          '_id': $(this).attr("id"),
           'status': 'deleted'
           })
         })
@@ -35,9 +35,10 @@ $(document).ready(function(){
           if (res.ok) return res.json()
         })
         .then(data => {
-          console.log(data)
           window.location.reload(true)
+          console.log( JSON.stringify(data)
         })
+
 
     });
 });
@@ -59,8 +60,9 @@ update.addEventListener('click', function () {
   	if (res.ok) return res.json()
   })
   .then(data => {
-  	console.log(data)
+  	// console.log(data)
   	window.location.reload(true)
+    console.log( JSON.stringify(data)
   })
 })
 
