@@ -39,36 +39,47 @@ $(document).ready(function(){
           window.location.reload(true)
           console.log( JSON.stringify(data));
         })
-
-
     });
+
+
+    // set timestamp when the quote input field has been changed 
+    $("#quote").change(function() {
+       $("#timestamp").val(dateISO);
+    });
+
+
+    // Update last yoda's quote
+    $("#update").click(function() {
+        fetch('quotes_replace', {
+          method: 'put',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            'name': 'Darth Vader',
+            'quote': 'I find your lack of faith disturbing.',
+            'timestamp': dateISO,
+            'status': 'active'
+            })
+          })
+          .then(res => {
+            if (res.ok) return res.json()
+          })
+          .then(data => {
+            // console.log(data)
+            window.location.reload(true)
+            console.log( JSON.stringify(data));
+          })
+    });
+
 });
 
 // Update last yoda's quote
 update.addEventListener('click', function () {
   // Send PUT Request here
-  fetch('quotes_replace', {
-  method: 'put',
-  headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify({
-    'name': 'Darth Vader',
-    'quote': 'I find your lack of faith disturbing.',
-    'timestamp': dateISO,
-    'status': 'active'
-  	})
-  })
-  .then(res => {
-  	if (res.ok) return res.json()
-  })
-  .then(data => {
-  	// console.log(data)
-  	window.location.reload(true)
-    console.log( JSON.stringify(data));
-  })
+
 })
 
 // set timestamp when the quote input field has been changed 
 quote_text.addEventListener('change', function () {
 	// console.log(dateISO);
-	quote_timestamp.value = dateISO;
+	// quote_timestamp.value = dateISO;
 })
