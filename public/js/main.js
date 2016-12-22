@@ -1,5 +1,6 @@
 // main.js
 var update = document.getElementById('update');
+var quote_name = document.getElementById('name');
 var quote_text = document.getElementById('quote');
 var quote_timestamp = document.getElementById('timestamp');
 var date = new Date();
@@ -10,13 +11,15 @@ var dateISO = date.toISOString();
 
 $(document).ready(function(){
     $("i.edit").click(function(){
-        $("input#name").attr("value") = $(this).next().text();
-        $("input#quote").attr("value") = $(this).next().next().text();
-        console.log("quote: " + $(this).attr("id") + " " + $(this).next().text() );
+        console.log("quote: " + $(this).attr("") + " " + $(this).next().text() );
+        quote_name = $(this).next().text();
+        // $("input#name").attr("value") = $(this).next().text();
+        quote_text = $(this).next().next().text();
+        // $("input#quote").attr("value") = $(this).next().next().text();
     });
 
     $("i.hide").click(function(){        
-        console.log("INFO: Hiding quote: " + $(this).next().next().text() + " from: " + $(this).next().text());
+        console.log("INFO: Hiding quote: " + $(this).next().next().next().text() + " from: " + $(this).next().next().text());
         // $(this).parent().hide();
 
         // Send PUT Request here
