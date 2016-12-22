@@ -17,7 +17,7 @@ app.use(express.static('css'))
 var db
 console.log('INFO: ' + 'mongodb://' + process.env.MONGODB_USER + ':' + process.env.MONGODB_PASSWORD + '@ds141328.mlab.com:41328/expmongo-quotes')
 MongoClient.connect('mongodb://'+process.env.MONGODB_USER+':'+process.env.MONGODB_PASSWORD+'@ds141328.mlab.com:41328/expmongo-quotes', (err, database) => {
-  if (err) return console.log('ERROR: '+err)
+  if (err) return console.log('ERROR: ' + err)
   db = database
   app.listen(process.env.PORT || 3000, () => {
     console.log('INFO: Listening on ' + process.env.PORT)
@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
   // Mine was '/Users/zellwk/Projects/demo-repos/crud-express-mongo' for this app.
 
   db.collection('quotes').find().toArray((err, result) => {
-    if (err) return console.log(err)
+    if (err) return console.log('ERROR: ' + err)
     // renders index.ejs
     res.render('index.ejs', {quotes: result})
   })
@@ -40,11 +40,9 @@ app.get('/', (req, res) => {
 
 // for saving a new quote
 app.post('/quotes', (req, res) => {
-  console.log('INFO:' + JSON.stringify(req.body));
   db.collection('quotes').save(req.body, (err, result) => {
-    if (err) return console.log(err)
-
-    console.log('INFO: Saved to database')
+    if (err) return console.log('ERROR: ' + err)
+    console.log('INFO:' + JSON.stringify(req.body) +' Saved to database')
     res.redirect('/')
   })
 })
