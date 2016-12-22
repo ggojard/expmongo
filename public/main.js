@@ -3,6 +3,7 @@ var update = document.getElementById('update');
 var quote_text = document.getElementById('quote');
 var quote_timestamp = document.getElementById('timestamp');
 var date = new Date();
+var dateISO = date.toISOString();
 // var day = date.getDate();
 // var monthIndex = date.getMonth();
 // var year = date.getFullYear();
@@ -15,7 +16,7 @@ update.addEventListener('click', function () {
   body: JSON.stringify({
     'name': 'Darth Vader',
     'quote': 'I find your lack of faith disturbing.',
-    'timestamp': date.toISOString();
+    'timestamp': dateISO
   	})
   })
   .then(res => {
@@ -29,6 +30,6 @@ update.addEventListener('click', function () {
 
 
 quote_text.addEventListener('click', function () {
-	console.log(date.toISOString());
-	quote_timestamp.value = date.toISOString();
+	console.log(dateISO);
+	quote_timestamp.value = dateISO;
 })
