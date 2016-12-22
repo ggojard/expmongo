@@ -76,8 +76,7 @@ app.put('/quotes_status', (req, res) => {
     }
   }, {
     sort: {_id: -1}
-  }
-  (err, result) => {
+  }, (err, result) => {
     if (err) return res.send(err)
     res.send(result)
   })
