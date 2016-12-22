@@ -13,10 +13,9 @@ $(document).ready(function(){
     $("i.edit").click(function(){
         console.log("INFO : Edit quote: " + $(this).next().next().text() + " from: " + $(this).next().text() );
         quote_name.value = $(this).next().text();
-        // $("input#name").attr("value") = $(this).next().text();
-        quote_text.value = $(this).next().next().text();
-        $("#id").val($(this).attr("id"));
-        // $("input#quote").attr("value") = $(this).next().next().text();
+        $("input#name").val($(this).next().text();
+        $("input#quote").val($(this).next().next().text();
+        $("#parent_id").val($(this).attr("id"));
     });
 
     $("i.hide").click(function(){        
@@ -43,10 +42,12 @@ $(document).ready(function(){
 
 
     // set timestamp when the quote input field has been changed 
-    $("#quote").change(function() {
+    $("input#quote").change(function() {
        $("#timestamp").val(dateISO);
     });
-
+    $("input#quote").click(function() {
+       $("#timestamp").val(dateISO);
+    });
 
     // Update last yoda's quote
     $("#update").click(function() {
@@ -71,15 +72,3 @@ $(document).ready(function(){
     });
 
 });
-
-// Update last yoda's quote
-update.addEventListener('click', function () {
-  // Send PUT Request here
-
-})
-
-// set timestamp when the quote input field has been changed 
-quote_text.addEventListener('change', function () {
-	// console.log(dateISO);
-	// quote_timestamp.value = dateISO;
-})
