@@ -71,7 +71,8 @@ app.put('/quotes_replace', (req, res) => {
 app.put('/quotes_status', (req, res) => {
   console.log("INFO: Update quote status to delete: " + JSON.stringify(req.body));
   db.collection('quotes')
-  .update({name: req.body.name}, {
+  // .findOneAndUpdate({name: req.body.name}, {
+  .findOneAndUpdate({_id: req.body._id}, {
   // .update({_id: req.body._id}, {
     $set: {      
       status: 'deleted' //req.body.status
