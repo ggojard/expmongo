@@ -8,7 +8,12 @@ var dateISO = date.toISOString();
 // var monthIndex = date.getMonth();
 // var year = date.getFullYear();
 
-
+$(document).ready(function(){
+    $("i").click(function(){
+        alert($(this).att(id));
+        $(this).hide();
+    });
+});
 
 update.addEventListener('click', function () {
   // Send PUT Request here
