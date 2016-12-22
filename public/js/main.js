@@ -16,7 +16,24 @@ $(document).ready(function(){
     });
 
     $("i.hide").click(function(){        
-        $(this).parent().hide();
+        // $(this).parent().hide();
+
+        // Send PUT Request here
+        fetch('quotes_status', {
+        method: 'put',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          'status': 'deleted'
+          })
+        })
+        .then(res => {
+          if (res.ok) return res.json()
+        })
+        .then(data => {
+          console.log(data)
+          window.location.reload(true)
+        })
+
     });
 });
 

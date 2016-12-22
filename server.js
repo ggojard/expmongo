@@ -54,12 +54,27 @@ app.put('/quotes_replace', (req, res) => {
   .findOneAndUpdate({name: 'yoda'}, {
     $set: {
       name: req.body.name,
-      quote: req.body.quote
+      quote: req.body.quote,
+      timestamp: req.body.timestamp
     }
   }, {
     sort: {_id: -1},
     upsert: true
   }, (err, result) => {
+    if (err) return res.send(err)
+    res.send(result)
+  })
+})
+
+// for updating one quote that match the search
+app.put('/quotes_status', (req, res) => {
+  db.collection('quotes')
+  .findOneAndUpdate({_id: req.body._id}, {
+    $set: {
+      status:  req.body.status
+    }
+  },
+  (err, result) => {
     if (err) return res.send(err)
     res.send(result)
   })
