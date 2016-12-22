@@ -1,8 +1,9 @@
-*{font-family:Arial, Helvetica, sans-serif;font-size: 1em;}
+*{font-family:Arial, Helvetica, sans-serif;font-size: 1em;color: #000;}
 .quotes {}
 .quote {}
 li{list-style:none;}
 .quote_name {background-color: #fff;color: #000;font-size: 1.1em;font-weight: 500;}
 .quote_text {background-color: #fff;color: #aaa;}
 .quote_timestamp {color: #ddd;font-size: 0.8em;border: 1px #eee;}
+.quote_status{background-color: green;}
 i{cursor:pointer;}

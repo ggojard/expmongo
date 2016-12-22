@@ -27,6 +27,7 @@ $(document).ready(function(){
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
+          '_id': $(this).attr("value"),
           'status': 'deleted'
           })
         })
@@ -41,6 +42,7 @@ $(document).ready(function(){
     });
 });
 
+// Update last yoda's quote
 update.addEventListener('click', function () {
   // Send PUT Request here
   fetch('quotes_replace', {
@@ -62,7 +64,7 @@ update.addEventListener('click', function () {
   })
 })
 
-
+// set timestamp when the quote input field has been changed 
 quote_text.addEventListener('change', function () {
 	// console.log(dateISO);
 	quote_timestamp.value = dateISO;
