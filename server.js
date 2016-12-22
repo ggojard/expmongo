@@ -69,12 +69,11 @@ app.put('/quotes_replace', (req, res) => {
 
 // for updating one quote that match the search
 app.put('/quotes_status', (req, res) => {
-	console.log("quotes update status to delete: " + req.body._id);
+	console.log("quotes update status to delete: " +  JSON.stringify(req);
   db.collection('quotes')
-  .update({name: 'yoda'}, {
+  .update({_id: 'yoda'}, {
   	// _id: req.body._id}, {
-    $set: {
-      name: 'WWW',
+    $set: {      
       status: 'deleted' //req.body.status
     }
   }, (err, result) => {
