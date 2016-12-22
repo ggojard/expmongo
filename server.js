@@ -55,7 +55,8 @@ app.put('/quotes_replace', (req, res) => {
     $set: {
       name: req.body.name,
       quote: req.body.quote,
-      timestamp: req.body.timestamp
+      timestamp: req.body.timestamp,
+      status: req.body.status
     }
   }, {
     sort: {_id: -1},
@@ -69,11 +70,13 @@ app.put('/quotes_replace', (req, res) => {
 // for updating one quote that match the search
 app.put('/quotes_status', (req, res) => {
   db.collection('quotes')
-  .findOneAndUpdate({_id: req.body._id}, {
+  .findOneAndUpdate({name: req.body.name}, {
     $set: {
       status:  req.body.status
     }
-  },
+  }, {
+    sort: {_id: -1}
+  }
   (err, result) => {
     if (err) return res.send(err)
     res.send(result)

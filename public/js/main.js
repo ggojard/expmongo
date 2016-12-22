@@ -16,6 +16,7 @@ $(document).ready(function(){
     });
 
     $("i.hide").click(function(){        
+        console.log("INFO: Hiding quote: " + $(this).next().next().text() + " from: " + $(this).next().text());
         // $(this).parent().hide();
 
         // Send PUT Request here
@@ -45,7 +46,8 @@ update.addEventListener('click', function () {
   body: JSON.stringify({
     'name': 'Darth Vader',
     'quote': 'I find your lack of faith disturbing.',
-    'timestamp': dateISO
+    'timestamp': dateISO,
+    'status': 'active'
   	})
   })
   .then(res => {
