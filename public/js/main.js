@@ -32,7 +32,8 @@ $(document).ready(function(){
           })
         })
         .then(res => {
-          if (res.ok) return res.json()
+          if (res.ok) return res.json();
+          console.log( JSON.stringify(data));
         })
         .then(data => {
           window.location.reload(true)

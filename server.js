@@ -72,7 +72,7 @@ app.put('/quotes_status', (req, res) => {
   db.collection('quotes')
   .update({_id: req.body._id}, {
     $set: {
-      status:  req.body.status
+      status: req.body.status
     }
   }, (err, result) => {
     if (err) return res.send(err)
