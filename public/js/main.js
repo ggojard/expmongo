@@ -20,8 +20,7 @@ $(document).ready(function(){
     });
 
     $("i.hide").click(function(){        
-        console.log("INFO: Hiding quote: " + $(this).next().next().next().text() + " from: " + $(this).next().next().text());
-        // $(this).parent().hide();
+        console.log("INFO: Hiding quote: " + $(this).next().next().next().text() + " from: " + $(this).next().next().text() + " " + $(this).attr("id"));
 
         // Send PUT Request here
         fetch('quotes_status', {
