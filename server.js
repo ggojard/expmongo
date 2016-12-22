@@ -51,7 +51,7 @@ app.post('/quotes', (req, res) => {
 // for updating one quote that match the search
 app.put('/quotes', (req, res) => {
   db.collection('quotes')
-  .findOneAndUpdate({name: 'Yoda'}, {
+  .findOneAndUpdate({name: 'yoda'}, {
     $set: {
       name: req.body.name,
       quote: req.body.quote
