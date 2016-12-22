@@ -29,7 +29,7 @@ update.addEventListener('click', function () {
 })
 
 
-quote_text.addEventListener('onchange', function () {
+quote_text.addEventListener('change', function () {
 	// console.log(dateISO);
 	quote_timestamp.value = dateISO;
 })
