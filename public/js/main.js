@@ -11,10 +11,10 @@ var dateISO = date.toISOString();
 
 $(document).ready(function(){
     $("i.edit").click(function(){
-        console.log("quote: " + $(this).attr("") + " " + $(this).next().text() );
-        quote_name = $(this).next().text();
+        console.log("INFO : Edit quote: " + $(this).next().next().text() + " from: " + $(this).next().text() );
+        quote_name.value = $(this).next().text();
         // $("input#name").attr("value") = $(this).next().text();
-        quote_text = $(this).next().next().text();
+        quote_text.value = $(this).next().next().text();
         // $("input#quote").attr("value") = $(this).next().next().text();
     });
 
