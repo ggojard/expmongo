@@ -5,3 +5,4 @@ li{list-style:none;}
 .quote_name {background-color: #fff;color: #000;font-size: 1.1em;font-weight: 500;}
 .quote_text {background-color: #fff;color: #aaa;}
 .quote_timestamp {color: #ddd;font-size: 0.8em;border: 1px #eee;}
+i{cursor:pointer;}
