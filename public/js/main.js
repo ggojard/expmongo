@@ -10,7 +10,7 @@ var dateISO = date.toISOString();
 
 $(document).ready(function(){
     $("i").click(function(){
-        alert($(this).att(id));
+        console.log("quote: " + $(this).attr(id));
         $(this).hide();
     });
 });
