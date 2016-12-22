@@ -66,7 +66,7 @@ $(document).ready(function(){
           })
           .then(data => {
             window.location.reload(true)
-            console.log( JSON.stringify(data));
+            console.log( data);
           })
     });
 
