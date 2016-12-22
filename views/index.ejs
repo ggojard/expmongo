@@ -32,7 +32,7 @@
       <i class="fa fa-pencil-square-o edit" id="<%= quotes[i]._id%>"></i>
       <span class="quote_name"><%= quotes[i].name %></span>
       <span class="quote_text"><%= quotes[i].quote %></span>
-      <span class="quote_status"><%= quotes[i].status %></span>
+      <span class="quote_status <%= quotes[i].status %>">&nbsp;&nbsp;</span>
       <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
       <!-- <span class="quote_text"><%= quotes[i]._id %></span> -->
     </li>
