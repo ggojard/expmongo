@@ -54,7 +54,8 @@ app.put('/quotes', (req, res) => {
   .findOneAndUpdate({name: 'Yoda'}, {
     $set: {
       name: req.body.name,
-      quote: req.body.quote
+      quote: req.body.quote,
+      timestamp: req.body.timestamp,
     }
   }, {
     sort: {_id: -1},

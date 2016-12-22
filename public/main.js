@@ -30,6 +30,5 @@ var date = new Date();
 // var year = date.getFullYear();
 quote_text.addEventListener('click', function () {
 	console.log(date.toISOString());
-
 	quote_timestamp.value = date.toISOString();
 })

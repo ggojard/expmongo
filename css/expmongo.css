@@ -3,4 +3,4 @@
 .quote {}
 .quote_name {background-color: #aaa;color: #fff; width: 1.2em;}
 .quote_text {background-color: #eee;color: #aaa;}
-.quote_timestamp {font-style: 0.8em;color: #eee;}
+.quote_timestamp {font-style: 0.8em;color: #eee;border: 1px #eee;}
