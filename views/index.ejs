@@ -25,7 +25,8 @@
     <li class="quote">
       <!-- <button id="edit">Edit</button> -->
       <!-- <button id="edit"><i class="fa fa-pencil-square-o"></i></button> -->
-      <i class="fa fa-pencil-square-o" id="<%= quotes[i]._id%>"></i>
+      <i class="fa fa-trash-o hide" id="<%= quotes[i]._id%>"></i>
+      <i class="fa fa-pencil-square-o edit" id="<%= quotes[i]._id%>"></i>
       <span class="quote_name"><%= quotes[i].name %></span>
       <span class="quote_text"><%= quotes[i].quote %></span>
       <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
