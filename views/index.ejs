@@ -17,7 +17,8 @@
   <form action="/quotes" method="POST">
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="quote" name="quote" id="quote">
-    <input type="datetime" name="timestamp" id="timestamp" disabled="true">
+    <!-- <input type="datetime" name="timestamp" id="timestamp" disabled="true"> -->
+    <input type="text" name="timestamp" id="timestamp" disabled="true">
     <button type="submit">Submit</button>
   </form>
 
@@ -25,7 +26,8 @@
   <% for(var i=0; i<quotes.length; i++) {%>
     <li class="quote">
       <!-- <button id="edit">Edit</button> -->
-      <button id="edit"><i class="fa fa-pencil-square-o"></i></button>
+      <!-- <button id="edit"><i class="fa fa-pencil-square-o"></i></button> -->
+      <i class="fa fa-pencil-square-o"></i>
       <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
       <span class="quote_name"><%= quotes[i].name %></span>
       <span class="quote_text"><%= quotes[i].quote %></span>      

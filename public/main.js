@@ -24,11 +24,12 @@ update.addEventListener('click', function () {
 var quote_text = document.getElementById('quote');
 var quote_timestamp = document.getElementById('timestamp');
 
-var date = new Date();
+var date = new Date().UTC();
 var day = date.getDate();
 var monthIndex = date.getMonth();
 var year = date.getFullYear();
 
 quote_text.addEventListener('click', function () {
-	quote_timestamp.value = year+"-"+monthIndex+"-"+day;
+	console.log(date);
+	// quote_timestamp.value = year+"-"+monthIndex+"-"+day;
 })
