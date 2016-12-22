@@ -15,9 +15,10 @@
   <form action="/quotes" method="POST">
     <input type="text" placeholder="name" name="name" id="name" value="">
     <input type="text" placeholder="quote" name="quote" id="quote" value="">
-    <!-- <input type="datetime" name="timestamp" id="timestamp" disabled="true"> -->
-    <input type="hidden" name="timestamp" id="timestamp">
-    <input type="hidden" name="status" id="status" value="active">
+    <!-- <input type="hidden" type="datetime" name="timestamp" id="timestamp" disabled="true"> -->
+    <input name="timestamp" id="timestamp" disabled="true">
+    <input name="status" id="status" value="active" disabled="true">
+    <input name="id" id="id" value="" disabled="true">
     <button type="submit">Submit</button>
   </form>
 
