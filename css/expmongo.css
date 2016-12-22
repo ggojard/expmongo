@@ -1,5 +1,5 @@
 *{font-family:Arial, Helvetica, sans-serif}
-.quotes {}
+.quotes {list-style-image:none;}
 .quote {}
 .quote_name {background-color: #aaa;color: #fff; width: 1.2em;}
 .quote_text {background-color: #eee;color: #aaa;}

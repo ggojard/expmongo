@@ -3,22 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>ExpMongo</title>
-  
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
   <link rel="stylesheet" type="text/css" href="expmongo.css">
 </head>
-<body>
-  
-  <div>May Node and Express be with you.</div>
 
+<body>  
+  <div>May Node and Express be with you.</div>
+  
   <form action="/quotes" method="POST">
     <input type="text" placeholder="name" name="name">
     <input type="text" placeholder="quote" name="quote" id="quote">
     <!-- <input type="datetime" name="timestamp" id="timestamp" disabled="true"> -->
-    <input type="text" name="timestamp" id="timestamp" disabled="true">
+    <input type="text" name="timestamp" id="timestamp">
     <button type="submit">Submit</button>
   </form>
 

@@ -1,5 +1,11 @@
 // main.js
 var update = document.getElementById('update');
+var quote_text = document.getElementById('quote');
+var quote_timestamp = document.getElementById('timestamp');
+var date = new Date();
+// var day = date.getDate();
+// var monthIndex = date.getMonth();
+// var year = date.getFullYear();
 
 update.addEventListener('click', function () {
   // Send PUT Request here
@@ -8,7 +14,8 @@ update.addEventListener('click', function () {
   headers: {'Content-Type': 'application/json'},
   body: JSON.stringify({
     'name': 'Darth Vader',
-    'quote': 'I find your lack of faith disturbing.'
+    'quote': 'I find your lack of faith disturbing.',
+    'timestamp': date.toISOString();
   	})
   })
   .then(res => {
@@ -21,13 +28,6 @@ update.addEventListener('click', function () {
 })
 
 
-var quote_text = document.getElementById('quote');
-var quote_timestamp = document.getElementById('timestamp');
-
-var date = new Date();
-// var day = date.getDate();
-// var monthIndex = date.getMonth();
-// var year = date.getFullYear();
 quote_text.addEventListener('click', function () {
 	console.log(date.toISOString());
 	quote_timestamp.value = date.toISOString();
