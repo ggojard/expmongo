@@ -9,12 +9,14 @@ var dateISO = date.toISOString();
 // var year = date.getFullYear();
 
 $(document).ready(function(){
-    $("i").click(function(){
-        
-        // $(this).hide();
+    $("i.edit").click(function(){
         $("#name").attr("value") = $(this).next().text;
         $("#quote").attr("value") = $(this).next().next().text;
-        console.log("quote: " + $(this).attr("id")) + " " + $(this).next().text;
+        console.log("quote: " + $(this).attr("id") + " " + $(this).next().text);
+    });
+
+    $("i.hide").click(function(){        
+        $(this).hide();
     });
 });
 
