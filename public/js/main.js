@@ -1,8 +1,9 @@
-// main.js
-var update = document.getElementById('update');
-var quote_name = document.getElementById('name');
-var quote_text = document.getElementById('quote');
-var quote_timestamp = document.getElementById('timestamp');
+// ****************  main.js
+
+// var update = document.getElementById('update');
+// var quote_name = document.getElementById('name');
+// var quote_text = document.getElementById('quote');
+// var quote_timestamp = document.getElementById('timestamp');
 var date = new Date();
 var dateISO = date.toISOString();
 // var day = date.getDate();
