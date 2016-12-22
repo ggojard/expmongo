@@ -1,9 +1,10 @@
 *{font-family:Arial, Helvetica, sans-serif;font-size: 1em;color: #000;}
+li{list-style:none;}
+i{cursor:pointer;}
+
 .quotes {}
 .quote {}
-li{list-style:none;}
 .quote_name {background-color: #fff;color: #000;font-weight: 800;}
 .quote_text {background-color: #fff;color: #000;}
-.quote_timestamp {color: #ddd;font-size: 0.8em;}
-.quote_status{background-color: lightgreen;color: #ddd;font-size: 0.8em;}
-i{cursor:pointer;}
+.quote_timestamp {color: #aaa;font-size: 0.8em;}
+.quote_status{background-color: lightgreen;color: #aaa;font-size: 0.8em;}

@@ -36,7 +36,7 @@ $(document).ready(function(){
         })
         .then(data => {
           window.location.reload(true)
-          console.log( JSON.stringify(data)
+          console.log( JSON.stringify(data));
         })
 
 
@@ -62,7 +62,7 @@ update.addEventListener('click', function () {
   .then(data => {
   	// console.log(data)
   	window.location.reload(true)
-    console.log( JSON.stringify(data)
+    console.log( JSON.stringify(data));
   })
 })
 
