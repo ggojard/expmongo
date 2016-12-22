@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 
 // for saving a new quote
 app.post('/quotes', (req, res) => {
-  console.log('INFO:' + JSON.stringify(req.body)
+  console.log('INFO:' + JSON.stringify(req.body));
   db.collection('quotes').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
