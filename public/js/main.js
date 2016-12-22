@@ -10,13 +10,13 @@ var dateISO = date.toISOString();
 
 $(document).ready(function(){
     $("i.edit").click(function(){
-        $("#name").attr("value") = $(this).next().text;
-        $("#quote").attr("value") = $(this).next().next().text;
-        console.log("quote: " + $(this).attr("id") + " " + $(this).next().text);
+        $("#name").attr("value") = $(this).next().text();
+        $("#quote").attr("value") = $(this).next().next().text();
+        console.log("quote: " + $(this).attr("id") + " " + $(this).next().c);
     });
 
     $("i.hide").click(function(){        
-        $(this).hide();
+        $(this).parent().hide();
     });
 });
 
