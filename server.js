@@ -49,7 +49,7 @@ app.post('/quotes', (req, res) => {
 
 
 // for updating one quote that match the search
-app.put('/quotes', (req, res) => {
+app.put('/quotes_replace', (req, res) => {
   db.collection('quotes')
   .findOneAndUpdate({name: 'yoda'}, {
     $set: {

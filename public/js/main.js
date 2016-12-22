@@ -22,7 +22,7 @@ $(document).ready(function(){
 
 update.addEventListener('click', function () {
   // Send PUT Request here
-  fetch('quotes', {
+  fetch('quotes_replace', {
   method: 'put',
   headers: {'Content-Type': 'application/json'},
   body: JSON.stringify({
