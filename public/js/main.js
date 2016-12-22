@@ -12,7 +12,7 @@ var dateISO = date.toISOString();
 $(document).ready(function(){
     $("i.edit").click(function(){
         console.log("INFO : Edit quote: " + $(this).next().next().text() + " from: " + $(this).next().text() );
-        // quote_name.value = $(this).next().text();
+       
         $("input#name").val($(this).next().text());
         $("input#quote").val($(this).next().next().text());
         $("#parent_id").val($(this).attr("id"));
@@ -20,8 +20,6 @@ $(document).ready(function(){
 
     $("i.hide").click(function(){        
         console.log("INFO: Hiding quote: " + $(this).next().next().next().text() + " from: " + $(this).next().next().text() + " " + $(this).attr("id"));
-
-        // Send PUT Request here
         fetch('quotes_status', {
         method: 'put',
         headers: {'Content-Type': 'application/json'},
@@ -65,7 +63,6 @@ $(document).ready(function(){
             if (res.ok) return res.json()
           })
           .then(data => {
-            // console.log(data)
             window.location.reload(true)
             console.log( JSON.stringify(data));
           })
