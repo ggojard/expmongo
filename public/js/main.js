@@ -15,7 +15,7 @@ $(document).ready(function(){
         quote_name.value = $(this).next().text();
         // $("input#name").attr("value") = $(this).next().text();
         quote_text.value = $(this).next().next().text();
-        $("#id").attr("value") = $(this).attr("id");
+        $("#id").val($(this).attr("id"));
         // $("input#quote").attr("value") = $(this).next().next().text();
     });
 
