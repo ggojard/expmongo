@@ -13,6 +13,7 @@ $(document).ready(function(){
        
         $("input#name").val($(this).next().text());
         $("input#quote").val($(this).next().next().text());
+        $("input#timestamp").val($(this).next().next().next().text());
         $("#parent_id").val($(this).attr("id"));
     });
 
