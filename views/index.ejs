@@ -21,26 +21,24 @@
     <form action="/quotes" method="POST" class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>          
+          <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="name" name="name" id="name" value="" class="validate">
-          <label for="name">First Name</label>
+          <label for="name">Name</label>
         </div>
 
         <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Telephone</label>
-        </div>
-
-        <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
+          <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="quote" name="quote" id="quote" value="" class="validate">
-          <label for="quote">Telephone</label>
+          <label for="quote">Quote</label>
         </div>
-        <!-- <input type="hidden" type="datetime" name="timestamp" id="timestamp" disabled="true"> -->
-        <input name="timestamp" id="timestamp" class="datepicker" >
-        <!-- <input name="status" id="status" value="active" > -->
 
+        <div class="input-field col s6">
+          <i class="fa fa-trash-o hide"></i>
+          <input type="text" placeholder="timestamp" name="timestamp" id="timestamp" value="" class="validate">
+          <label for="timestamp">Timestamp</label>
+        </div>
+
+        <!-- <input name="status" id="status" value="active" > -->
         <!-- Switch -->
         <div class="switch">
           <label>
@@ -51,8 +49,13 @@
           </label>
         </div>
 
-        <input name="parent_id" id="parent_id" value="" >
-        <button type="submit">Submit</button>
+        <div class="input-field col s6">
+          <i class="fa fa-trash-o hide"></i>
+          <input type="text" placeholder="parent_id" name="parent_id" id="parent_id" value="" class="validate">
+          <label for="parent_id">Quote parent id</label>
+        </div>
+        <!-- <input name="parent_id" id="parent_id" value="" > -->
+        <button type="submit" class="waves-effect waves-light btn">Submit</button>
         <!-- IMPORTANT: a field disabled="true" is not submitted -->
       </div>
     </form>
