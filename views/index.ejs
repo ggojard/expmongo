@@ -15,9 +15,9 @@
 </head>
 
 <body>  
-  <div>May Node and Express be with you.</div>
+  <div class="col s12">May Node and Express be with you.</div>
 
-      <div class="row">
+  <div class="row">
         <div class="col s12 m6 l3">
           <div class="card-panel blue-grey lighten-5">
     <form action="/quotes" method="POST" >
@@ -48,12 +48,12 @@
         </div>
         <!-- <input name="parent_id" id="parent_id" value="" > -->
 
-        <!-- <input name="status" id="status" value="active" > -->
+        <!-- <input name="status" id="status" value="released" > -->
         <!-- Switch -->
         <div class="switch">
           <label>
             Archived
-            <input  name="status" id="status" type="checkbox" value="active">
+            <input  name="status" id="status" type="checkbox" value="released">
             <span class="lever"></span>
             Active
           </label>
@@ -83,9 +83,9 @@
  -->
 
   <% for(var i=0; i<quotes.length; i++) {%>
-    <% if(quotes[i].status) {%>
-      <div class="row">
-        <div class="col s3">
+    <% if(quotes[i].status == "released") {%>
+      <div class="">
+        <div class="col s12 m6 l3">
           <div class="card-panel small cyan lighten-4">
 
       <i class="fa fa-trash-o delete" id="<%= quotes[i]._id%>"></i>
