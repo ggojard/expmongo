@@ -22,7 +22,7 @@ $(document).ready(function(){
        $("#timestamp").val(dateISO);
     });
 
-    $("i.deleted").click(function(){        
+    $("i.delete").click(function(){        
         console.log("INFO: Hiding quote: " + $(this).next().next().next().text() + " from: " + $(this).next().next().text() + " " + $(this).attr("id"));
         fetch('quotes_status', {
         method: 'put',

@@ -18,6 +18,7 @@
   <div>May Node and Express be with you.</div>
 
   <div class="row">
+   <div class="card-panel small darken-1">
     <form action="/quotes" method="POST" class="col s12 m6 l3">
       <div class="row">
         <div class="input-field col s1">
@@ -63,6 +64,7 @@
       </div>
     </form>
   </div>
+  </div>
 
 <!--   <ul class="quotes">
   <% for(var i=0; i<quotes.length; i++) {%>
@@ -85,12 +87,15 @@
         <div class="col s12 m6 l3">
           <div class="card-panel small blue-grey darken-1">
 
-      <i class="fa fa-trash-o deleted" id="<%= quotes[i]._id%>"></i>
+      <i class="fa fa-trash-o delete" id="<%= quotes[i]._id%>"></i>
       <i class="fa fa-pencil-square-o edit" id="<%= quotes[i]._id%>"></i>
+      <br>
       <span class="quote_name"><%= quotes[i].name %></span>
       <span class="quote_text"><%= quotes[i].quote %></span>
+      <br>
       <span class="quote_status <%= quotes[i].status %>">&nbsp;&nbsp;</span>
       <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
+      <br>
       <span class="quote_text"><%= quotes[i]._id %></span>
 
 
