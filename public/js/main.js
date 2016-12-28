@@ -9,11 +9,11 @@ $(document).ready(function(){
     Materialize.updateTextFields();
 
     $("i.edit").click(function(){
-        console.log("INFO : Edit quote: " + $(this).next().next().text() + " from: " + $(this).next().text() );
+        console.log("INFO : Edit quote: " + $(this).next(".quote_text").text() + " from: " + $(this).next(".quote_name").text() );
        
-        $("input#name").val($(this).next().text());
+        $("input#name").val($(this).next(".quote_name").text());
         $("input#quote").val($(this).next().next().text());
-        $("input#timestamp").val($(this).next().next().next().text());
+        $("input#timestamp").val($(this).next(".quote_timestamp").text());
         $("#parent_id").val($(this).attr("id"));
     });
 
