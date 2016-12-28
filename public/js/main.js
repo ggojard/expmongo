@@ -32,7 +32,7 @@ $(document).ready(function(){
         body: JSON.stringify({
           '_id': $(this).attr("id"),
           'name': $(this).next().next().text(),
-          'status': 'false'
+          'status': 'archived'
           })
         })
         .then(res => {

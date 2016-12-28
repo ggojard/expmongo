@@ -75,7 +75,7 @@ app.put('/quotes_status', (req, res) => {
   db.collection('quotes')
   .findOneAndUpdate({_id: req.body._id}, {
     $set: {      
-      status: 'deleted' //req.body.status
+      status: 'archived' //req.body.status
     }
   }, (err, result) => {
     if (err) return res.send(err)
