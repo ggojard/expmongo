@@ -11,10 +11,10 @@ $(document).ready(function(){
     $("i.edit").click(function(){
         console.log("INFO : Edit quote: " + $(this).next(".quote_text").text() + " from: " + $(this).next(".quote_name").text() );
        
-        $("input#name").val($(this).next(".quote_name").text());
-        $("input#quote").val($(this).next().next().text());
-        $("input#timestamp").val($(this).next(".quote_timestamp").text());
-        $("#parent_id").val($(this).attr("id"));
+        $("input#name").val( $(this).next(".quote_name").text() );
+        $("input#quote").val( $(this).next(".quote_text").text() );
+        $("input#timestamp").val( $(this).next(".quote_timestamp").text() );
+        $("#parent_id").val( $(this).attr("id") );
     });
 
     // set timestamp when the quote input field has been changed 
@@ -26,13 +26,13 @@ $(document).ready(function(){
     });
 
     $("i.delete").click(function(){        
-        console.log("INFO: Hiding quote: " + $(this).next().next().next().text() + " from: " + $(this).next().next().text() + " " + $(this).attr("id"));
+        console.log("INFO: Hiding quote: " + $(this).next(".quote_text").text()  + " from: " + $(this).next(".quote_name").text() + " id: " + $(this).attr("id"));
         fetch('quotes_status', {
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           'id': $(this).attr("id"),
-          'name': $(this).next().next().text(),
+          'name': $(this).next(".quote_name").text(),
           'status': 'archived'
           })
         })
