@@ -70,10 +70,10 @@ app.put('/quotes_replace', (req, res) => {
 // for updating one quote that match the search
 app.put('/quotes_status', (req, res) => {
   console.log("INFO: Update quote status to delete: " + JSON.stringify(req.body));
-  db.collection('quotes')
   // .findOneAndUpdate({name: req.body.name}, {
-  .findOneAndUpdate({_id: req.body._id}, {
   // .update({_id: req.body._id}, {
+  db.collection('quotes')
+  .findOneAndUpdate({_id: req.body._id}, {
     $set: {      
       status: 'deleted' //req.body.status
     }
