@@ -18,58 +18,53 @@
   <div class="col s12">My List</div>
 
   <div class="row">
-        <div class="col s12 m6 l3">
-          <div class="card-panel blue-grey lighten-5">
-    <form action="/quotes" method="POST" >
-      
-        <div class="input-field">
-          <i class="fa fa-trash-o hide"></i>
-          <input type="text" placeholder="name" name="name" id="name" value="" class="validate">
-          <label for="name">Name</label>
-        </div>
+    <div class="col s12 m6 l3">
+      <div class="card-panel blue-grey lighten-5">
+        <form action="/quotes" method="POST" >    
+          <div class="input-field">
+            <i class="fa fa-trash-o hide"></i>
+            <input type="text" placeholder="name" name="name" id="name" value="" class="validate">
+            <label for="name">Name</label>
+          </div>
 
-        <div class="input-field">
-          <i class="fa fa-trash-o hide"></i>
-          <input type="text" placeholder="quote" name="quote" id="quote" value="" class="validate">
-          <label for="quote">Quote</label>
-        </div>
+          <div class="input-field">
+            <i class="fa fa-trash-o hide"></i>
+            <input type="text" placeholder="quote" name="quote" id="quote" value="" class="validate">
+            <label for="quote">Quote</label>
+          </div>
 
-        <div class="input-field">
-          <i class="fa fa-trash-o hide"></i>
-          <input type="text" placeholder="timestamp" name="timestamp" id="timestamp" value="" class="validate">
-          <label for="timestamp">Timestamp</label>
-        </div>
+          <div class="input-field">
+            <i class="fa fa-trash-o hide"></i>
+            <input type="text" placeholder="timestamp" name="timestamp" id="timestamp" value="" class="validate">
+            <!-- <label for="timestamp">Timestamp</label> -->
+          </div>
 
-        <div class="input-field">
-          <i class="fa fa-trash-o hide"></i>
-          <input type="text" placeholder="parent_id" name="parent_id" id="parent_id" value="" class="validate">
-          <label for="parent_id">Quote parent id</label>
-        </div>
-        <!-- <input name="parent_id" id="parent_id" value="" > -->
+          <div class="input-field">
+            <i class="fa fa-trash-o hide"></i>
+            <input type="text" placeholder="parent_id" name="parent_id" id="parent_id" value="" class="validate">
+            <!-- <label for="parent_id">Quote parent id</label> -->
+          </div>
+          <!-- <input name="parent_id" id="parent_id" value="" > -->
 
-        <!-- <input name="status" id="status" value="released" > -->
-        <!-- Switch -->
-        <div class="switch">
-          <label>
-            Archived
-            <input  name="status" id="status" type="checkbox" value="released" checked="checked">
-            <span class="lever"></span>
-            Released
-          </label>
-        </div>
-
-
-        <p>
-          <button type="submit" class="waves-effect waves-light btn">Submit</button>
-        </p>
+          <!-- <input name="status" id="status" value="released" > -->
+          <!-- Switch -->
+          <div class="switch">
+            <label>
+              Archived
+              <input  name="status" id="status" type="checkbox" value="released" checked="checked">
+              <span class="lever"></span>
+              Released
+            </label>
+          </div>
 
 
-        <!-- IMPORTANT: a field disabled="true" is not submitted -->
-
-      
-    </form>
-  </div>
-  </div>
+          <p>
+            <button type="submit" class="waves-effect waves-light btn">Submit</button>
+          </p>
+          <!-- IMPORTANT: a field disabled="true" is not submitted -->
+        </form>
+      </div>
+    </div>
   </div>
 <!--   <ul class="quotes">
   <% for(var i=0; i<quotes.length; i++) {%>
@@ -87,36 +82,24 @@
  -->
 
   <% for(var i=0; i<quotes.length; i++) {%>
-    <% if(quotes[i].status == "released") {%>
-      <div class="">
+      <div class="row">
         <div class="col s12 m6 l3">
+          <% if(quotes[i].status == "released") {%>
           <div class="card-panel small cyan lighten-4">
-
-      <i class="fa fa-trash-o delete" id="<%= quotes[i]._id%>"></i>
-      <i class="fa fa-pencil-square-o edit" id="<%= quotes[i]._id%>"></i>
-      <span class="quote_name"><%= quotes[i].name %></span>
-      <span class="quote_text"><%= quotes[i].quote %></span>
-      <span class="quote_status <%= quotes[i].status %>">&nbsp;&nbsp;</span>
-      <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
-      <span class="quote_text"><%= quotes[i]._id %></span>
-
-<!--             <div class="card-content white-text">
-              <span class="card-title">
-              <%= quotes[i].name %></span>
-              <p>
-                <%= quotes[i].quote %><br>
-                <%= quotes[i].timestamp %>
-              </p>
-            </div>
-            <div class="card-action">
-              <button class="waves-effect waves-light btn edit" id="<%= quotes[i]._id%>">Edit</button>
-              <button class="waves-effect waves-light btn hide" id="<%= quotes[i]._id%>">Archive</button>
-            </div>
- -->
+          <% } else { %>
+          <div class="card-panel small grey lighten-2">
+          <% } %>
+            <i class="fa fa-trash-o delete" id="<%= quotes[i]._id%>"></i>
+            <i class="fa fa-pencil-square-o edit" id="<%= quotes[i]._id%>"></i>
+            <span class="quote_name"><%= quotes[i].name %></span>
+            <span class="quote_text"><%= quotes[i].quote %></span>
+            <span></span>
+            <!-- <span class="quote_status <%= quotes[i].status %>">&nbsp;&nbsp;</span> -->
+            <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
+            <span class="quote_text"><%= quotes[i]._id %></span>
            </div>
         </div>
       </div>
-    <% } %>    
   <% } %>
   
 
@@ -125,7 +108,6 @@
     <h2>Replace last quote written by Master Yoda with a quote written by Darth Vadar</h2>
   	<button id="update">Vadar invades!</button>
   </div> -->
-
 </body>
  
 <script type="text/javascript" src="js/main.js"></script>
