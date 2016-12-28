@@ -30,7 +30,7 @@ $(document).ready(function(){
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          '_id': $(this).attr("id"),
+          'id': $(this).attr("id"),
           'name': $(this).next().next().text(),
           'status': 'archived'
           })
