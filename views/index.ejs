@@ -17,10 +17,11 @@
 <body>  
   <div>May Node and Express be with you.</div>
 
-  <div class="row">
-   <div class="card-panel small darken-1">
-    <form action="/quotes" method="POST" class="col s12 m6 l3">
       <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card-panel small blue-grey darken-1">
+    <form action="/quotes" method="POST" class="col s12 m6 l3">
+      
         <div class="input-field col s1">
           <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="name" name="name" id="name" value="" class="validate">
@@ -61,11 +62,11 @@
         <button type="submit" class="waves-effect waves-light btn">Submit</button>
         <!-- IMPORTANT: a field disabled="true" is not submitted -->
 
-      </div>
+      
     </form>
   </div>
   </div>
-
+  </div>
 <!--   <ul class="quotes">
   <% for(var i=0; i<quotes.length; i++) {%>
     <li class="quote" id="<%= quotes[i]._id%>">
