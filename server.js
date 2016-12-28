@@ -70,12 +70,12 @@ app.put('/quotes_replace', (req, res) => {
 // for updating one quote that match the search
 app.put('/quotes_status', (req, res) => {
   console.log("INFO: Update quote status to delete: " + JSON.stringify(req.body));
-  // .findOneAndUpdate({name: req.body.name}, {
-  // .update({_id: req.body._id}, {
   db.collection('quotes')
-  .findOneAndUpdate({_id: req.body._id}, {
+  .findOneAndUpdate({name: req.body.name}, {
+  // .update({_id: req.body._id}, {
+  // .findOneAndUpdate({_id: req.body._id}, {
     $set: {      
-      status: 'archived' //req.body.status
+      status: req.body.status
     }
   }, (err, result) => {
     if (err) return res.send(err)
