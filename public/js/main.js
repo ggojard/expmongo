@@ -6,13 +6,7 @@ var dateISO = date.toISOString();
 
 $(document).ready(function(){
 
-
-      $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
-      });
-
-      $("button.edit").click(function(){
+      $("i.edit").click(function(){
         console.log("INFO : Edit quote: " + $(this).next().next().text() + " from: " + $(this).next().text() );
        
         $("input#name").val($(this).next().text());
@@ -28,7 +22,7 @@ $(document).ready(function(){
        $("#timestamp").val(dateISO);
     });
 
-    $("button.hide").click(function(){        
+    $("i.deleted").click(function(){        
         console.log("INFO: Hiding quote: " + $(this).next().next().next().text() + " from: " + $(this).next().next().text() + " " + $(this).attr("id"));
         fetch('quotes_status', {
         method: 'put',

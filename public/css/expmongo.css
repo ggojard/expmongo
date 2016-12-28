@@ -2,11 +2,10 @@
 li{list-style:none;}
 i{cursor:pointer;}
 
-.quotes {}
-.quote {}
-.quote_name {background-color: #fff;color: #000;font-weight: 800;}
-.quote_text {background-color: #fff;color: #000;}
+/*.quote_name {background-color: #fff;color: #000;font-weight: 800;}
+.quote_text {background-color: #fff;color: #000;}*/
 .quote_timestamp {color: #aaa;font-size: 0.8em;}
-.quote_status{color: #aaa;font-size: 0.8em;}
-/*.active{background-color: lightgreen;}*/
+/*.quote_status{color: #aaa;font-size: 0.8em;}*/
+
+.active{background-color: lightgreen;}
 .deleted{background-color: pink;}
