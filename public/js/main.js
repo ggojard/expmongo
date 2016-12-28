@@ -39,7 +39,7 @@ $(document).ready(function(){
           if (res.ok) return res.json();
         })
         .then(data => {
-          window.location.reload(true)
+          // window.location.reload(true)
           console.log( data);
         })
     });
