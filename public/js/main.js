@@ -9,11 +9,11 @@ $(document).ready(function(){
     Materialize.updateTextFields();
 
     $("i.edit").click(function(){
-        console.log("INFO : Edit quote: " + $(this).next(".quote_text").text() + " from: " + $(this).next(".quote_name").text() );
+        console.log("INFO : Edit quote: " + $(this).parent().find(".quote_text").text() + " from: " + $(this).parent().find(".quote_name").text() );
        
-        $("input#name").val( $(this).next(".quote_name").text() );
-        $("input#quote").val( $(this).next(".quote_text").text() );
-        $("input#timestamp").val( $(this).next(".quote_timestamp").text() );
+        $("input#name").val( $(this).parent().find(".quote_name").text() );
+        $("input#quote").val( $(this).parent().find(".quote_text").text() );
+        $("input#timestamp").val( $(this).parent().find(".quote_timestamp").text() );
         $("#parent_id").val( $(this).attr("id") );
     });
 
@@ -26,13 +26,13 @@ $(document).ready(function(){
     });
 
     $("i.delete").click(function(){        
-        console.log("INFO: Hiding quote: " + $(this).next(".quote_text").text()  + " from: " + $(this).next(".quote_name").text() + " id: " + $(this).attr("id"));
+        console.log("INFO: Hiding quote: " + $(this).parent().find(".quote_text").text()  + " from: " + $(this).parent().find(".quote_name").text() + " id: " + $(this).attr("id"));
         fetch('quotes_status', {
         method: 'put',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
           'id': $(this).attr("id"),
-          'name': $(this).next(".quote_name").text(),
+          'name': $(this).parent().find(".quote_name").text(),
           'status': 'archived'
           })
         })
