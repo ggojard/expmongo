@@ -5,7 +5,14 @@ var dateISO = date.toISOString();
 
 
 $(document).ready(function(){
-    $("i.edit").click(function(){
+
+
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+      });
+      
+      $("i.edit").click(function(){
         console.log("INFO : Edit quote: " + $(this).next().next().text() + " from: " + $(this).next().text() );
        
         $("input#name").val($(this).next().text());
