@@ -20,22 +20,22 @@
   <div class="row">
     <form action="/quotes" method="POST" class="col s12">
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s1">
           <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="name" name="name" id="name" value="" class="validate">
           <label for="name">Name</label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="input-field col s3">
           <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="quote" name="quote" id="quote" value="" class="validate">
-          <label for="quote">Quote</label>
+          <!-- <label for="quote">Quote</label> -->
         </div>
 
-        <div class="input-field col s6">
+        <div class="input-field col s1">
           <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="timestamp" name="timestamp" id="timestamp" value="" class="validate">
-          <label for="timestamp">Timestamp</label>
+          <!-- <label for="timestamp">Timestamp</label> -->
         </div>
 
         <!-- <input name="status" id="status" value="active" > -->
@@ -49,10 +49,10 @@
           </label>
         </div>
 
-        <div class="input-field col s6">
+        <div class="input-field col s2">
           <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="parent_id" name="parent_id" id="parent_id" value="" class="validate">
-          <label for="parent_id">Quote parent id</label>
+          <!-- <label for="parent_id">Quote parent id</label> -->
         </div>
         <!-- <input name="parent_id" id="parent_id" value="" > -->
         <button type="submit" class="waves-effect waves-light btn">Submit</button>
@@ -79,7 +79,7 @@
   <% for(var i=0; i<quotes.length; i++) {%>
     <% if(quotes[i].status) {%>
       <div class="row">
-        <div class="col s12 m6">
+        <div class="col s12 m6 l3">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">
@@ -91,9 +91,8 @@
               </p>
             </div>
             <div class="card-action">
-              
-            <button class="waves-effect waves-light btn"><i class="fa fa-trash-o hide" id="<%= quotes[i]._id%>"></i>Edit</button>
-            <button class="waves-effect waves-light btn"><i class="fa fa-pencil-square-o edit" id="<%= quotes[i]._id%>"></i>Archive</button>
+              <button class="waves-effect waves-light btn" id="<%= quotes[i]._id%>">Edit</button>
+              <button class="waves-effect waves-light btn" id="<%= quotes[i]._id%>">Archive</button>
             </div>
           </div>
         </div>
