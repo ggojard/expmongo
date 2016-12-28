@@ -6,7 +6,9 @@ var dateISO = date.toISOString();
 
 $(document).ready(function(){
 
-      $("i.edit").click(function(){
+    Materialize.updateTextFields();
+
+    $("i.edit").click(function(){
         console.log("INFO : Edit quote: " + $(this).next().next().text() + " from: " + $(this).next().text() );
        
         $("input#name").val($(this).next().text());
@@ -30,7 +32,7 @@ $(document).ready(function(){
         body: JSON.stringify({
           '_id': $(this).attr("id"),
           'name': $(this).next().next().text(),
-          'status': 'deleted'
+          'status': 'false'
           })
         })
         .then(res => {

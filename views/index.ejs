@@ -50,16 +50,21 @@
 
         <!-- <input name="status" id="status" value="released" > -->
         <!-- Switch -->
-        <div class="switch">
+<!--         <div class="switch">
           <label>
             Archived
             <input  name="status" id="status" type="checkbox" value="released">
             <span class="lever"></span>
             Active
           </label>
-        </div>
+        </div> -->
 
-        <button type="submit" class="waves-effect waves-light btn">Submit</button>
+        <p>
+          <input type="checkbox" class="filled-in" id="released" checked="checked" />
+          <label for="released">Released</label>
+        </p>
+
+        <button type="submit" class="waves-effect waves-light btn right">Submit</button>
         <!-- IMPORTANT: a field disabled="true" is not submitted -->
 
       
@@ -83,7 +88,7 @@
  -->
 
   <% for(var i=0; i<quotes.length; i++) {%>
-    <% if(quotes[i].status == "released") {%>
+    <% if(quotes[i].released) {%>
       <div class="">
         <div class="col s12 m6 l3">
           <div class="card-panel small cyan lighten-4">
