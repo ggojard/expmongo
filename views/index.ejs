@@ -57,7 +57,6 @@
             </label>
           </div>
 
-
           <p>
             <button type="submit" class="waves-effect waves-light btn">Submit</button>
           </p>
@@ -81,9 +80,10 @@
   </ul>
  -->
 
-  <% for(var i=0; i<quotes.length; i++) {%>
       <div class="row">
         <div class="col s12 m6 l3">
+
+  <% for(var i=0; i<quotes.length; i++) {%>
           <% if(quotes[i].status == "released") {%>
           <div class="card-panel small cyan lighten-4">
           <% } else { %>
@@ -98,9 +98,9 @@
             <span class="quote_timestamp"><%= quotes[i].timestamp %></span>
             <span class="quote_text"><%= quotes[i]._id %></span>
            </div>
+  <% } %>
         </div>
       </div>
-  <% } %>
   
 
 
