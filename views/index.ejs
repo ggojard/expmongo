@@ -18,12 +18,12 @@
   <div>May Node and Express be with you.</div>
 
   <div class="row">
-    <form action="/quotes" method="POST" class="col s12">
+    <form action="/quotes" method="POST" class="col s12 m6 l3">
       <div class="row">
         <div class="input-field col s1">
           <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="name" name="name" id="name" value="" class="validate">
-          <label for="name">Name</label>
+          <!-- <label for="name">Name</label> -->
         </div>
 
         <div class="input-field col s3">
@@ -32,22 +32,12 @@
           <!-- <label for="quote">Quote</label> -->
         </div>
 
-        <div class="input-field col s1">
+        <div class="input-field col s2">
           <i class="fa fa-trash-o hide"></i>
           <input type="text" placeholder="timestamp" name="timestamp" id="timestamp" value="" class="validate">
           <!-- <label for="timestamp">Timestamp</label> -->
         </div>
 
-        <!-- <input name="status" id="status" value="active" > -->
-        <!-- Switch -->
-        <div class="switch">
-          <label>
-            Archived
-            <input  name="status" id="status" type="checkbox" value="active">
-            <span class="lever"></span>
-            Active
-          </label>
-        </div>
 
         <div class="input-field col s2">
           <i class="fa fa-trash-o hide"></i>
@@ -55,8 +45,21 @@
           <!-- <label for="parent_id">Quote parent id</label> -->
         </div>
         <!-- <input name="parent_id" id="parent_id" value="" > -->
+
+        <!-- <input name="status" id="status" value="active" > -->
+        <!-- Switch -->
+        <div class="switch col s2">
+          <label>
+            Archived
+            <input  name="status" id="status" type="checkbox" value="active">
+            Active
+            <span class="lever"></span>
+          </label>
+        </div>
+
         <button type="submit" class="waves-effect waves-light btn">Submit</button>
         <!-- IMPORTANT: a field disabled="true" is not submitted -->
+
       </div>
     </form>
   </div>
@@ -91,8 +94,8 @@
               </p>
             </div>
             <div class="card-action">
-              <button class="waves-effect waves-light btn" id="<%= quotes[i]._id%>">Edit</button>
-              <button class="waves-effect waves-light btn" id="<%= quotes[i]._id%>">Archive</button>
+              <button class="waves-effect waves-light btn edit" id="<%= quotes[i]._id%>">Edit</button>
+              <button class="waves-effect waves-light btn hide" id="<%= quotes[i]._id%>">Archive</button>
             </div>
           </div>
         </div>
