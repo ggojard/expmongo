@@ -40,8 +40,10 @@ $(document).ready(function(){
           if (res.ok) return res.json();
         })
         .then(data => {
+           if (data.value) {console.info("INFO: Quote Found and Deleted !");}
+           else {console.warn( data);}
           // window.location.reload(true)
-          console.log( data);
+          
         })
     });
 

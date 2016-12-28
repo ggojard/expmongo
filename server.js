@@ -73,8 +73,6 @@ app.put('/quotes_status', (req, res) => {
   db.collection('quotes')
   // .findOneAndUpdate({name: req.body.name}, {
   .findOneAndUpdate({_id: req.body.id}, {
-  // .update({_id: req.body._id}, {
-  // .findOneAndUpdate({_id: req.body._id}, {
     $set: {      
       status: req.body.status
     }
