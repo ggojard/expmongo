@@ -41,9 +41,24 @@ app.get('/', (req, res) => {
 // for saving a new quote
 app.post('/quotes', (req, res) => {
   db.collection('quotes').save(req.body, (err, result) => {
-    if (err) return console.log('ERROR: ' + err)
+    if (err) return console.warn('ERROR: ' + err)
     console.log('INFO:' + JSON.stringify(req.body) +' Saved to database')
     res.redirect('/')
+  })
+})
+
+// for updating one quote that match the search
+app.put('/quotes_status', (req, res) => {
+  console.log("INFO: Update quote status to delete: " + JSON.stringify(req.body));
+  db.collection('quotes')
+  // .findOneAndUpdate({name: req.body.name}, {
+  .findOneAndUpdate({_id: req.body.id}, {
+    $set: {      
+      status: req.body.status
+    }
+  }, (err, result) => {
+    if (err) return res.send(err)
+    res.send(result)
   })
 })
 
@@ -61,21 +76,6 @@ app.put('/quotes_replace', (req, res) => {
   }, {
     sort: {_id: -1},
     upsert: true
-  }, (err, result) => {
-    if (err) return res.send(err)
-    res.send(result)
-  })
-})
-
-// for updating one quote that match the search
-app.put('/quotes_status', (req, res) => {
-  console.log("INFO: Update quote status to delete: " + JSON.stringify(req.body));
-  db.collection('quotes')
-  // .findOneAndUpdate({name: req.body.name}, {
-  .findOneAndUpdate({_id: req.body.id}, {
-    $set: {      
-      status: req.body.status
-    }
   }, (err, result) => {
     if (err) return res.send(err)
     res.send(result)
